@@ -60,25 +60,25 @@ export const MobileMenu: React.FC = () => {
                 </button>
               </div>
 
-              <nav className="space-y-4" aria-label="Main navigation">
+              <nav className="space-y-6" aria-label="Main navigation">
                 <a
                   href="#about"
                   onClick={toggleMenu}
-                  className="block text-gray-600 hover:text-gray-900 transition-colors"
+                  className="block text-gray-600 hover:text-gray-900 transition-colors text-xl font-medium py-3 px-4 rounded-lg hover:bg-gray-50"
                 >
                   About
                 </a>
                 <a
                   href="#projects"
                   onClick={toggleMenu}
-                  className="block text-gray-600 hover:text-gray-900 transition-colors"
+                  className="block text-gray-600 hover:text-gray-900 transition-colors text-xl font-medium py-3 px-4 rounded-lg hover:bg-gray-50"
                 >
                   Projects
                 </a>
                 <a
                   href="#contact"
                   onClick={toggleMenu}
-                  className="block text-gray-600 hover:text-gray-900 transition-colors"
+                  className="block text-gray-600 hover:text-gray-900 transition-colors text-xl font-medium py-3 px-4 rounded-lg hover:bg-gray-50"
                 >
                   Contact
                 </a>

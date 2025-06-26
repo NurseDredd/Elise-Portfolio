@@ -108,7 +108,7 @@ export default function About() {
                 </p>
                 <p>
                   My journey in web development has given me an understanding of
-                  of both technical challenges and user experience, making me
+                  both technical challenges and user experience, making me
                   equipped to create solutions that not only look good but also
                   work well. I am a team player, I have high work ethics, and
                   approach tasks with a positive mindset.

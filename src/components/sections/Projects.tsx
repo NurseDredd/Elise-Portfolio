@@ -56,7 +56,7 @@ const projects: Project[] = [
   {
     title: "Pokemon Battle Arena",
     description:
-      "Interactive web game created as a school project to explore game mechanics and external API integration. Uses the Pokémon API to fetch real-time character data. Built with vanilla JavaScript and CSS.",
+      "Interactive web game created as a school project to explore game mechanics and external API integration. Uses the Pokémon API to fetch real-time character data. Built with vanilla JavaScript and CSS and looks best on bigger screens.",
     image: "/projects/pokemonbattle.webp",
     link: "https://nursedredd.github.io/Pokemon-Battle/",
     code: "https://github.com/nursedredd/Pokemon-Battle",
