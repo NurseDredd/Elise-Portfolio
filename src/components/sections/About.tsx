@@ -66,7 +66,7 @@ export default function About() {
                   viewport={{ once: true }}
                 >
                   <Image
-                    src="/images/EliseLinkedInFotoCrop.webp"
+                    src="/images/EliseLinkedinFotoCrop.webp"
                     alt="Image of Elise Philipsson"
                     fill
                     className="object-cover"
