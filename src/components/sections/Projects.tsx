@@ -28,7 +28,7 @@ const projects: Project[] = [
       "Designed and built a live website for Ramona's family daycare — my first professional project. Built with Next.js, TypeScript, and Tailwind CSS. Fully responsive, accessibility-compliant, and SEO-optimized.",
     image: "/projects/ramonasfamiljedaghem.webp",
     link: "https://www.ramonasfamiljedaghem.se/",
-    code: "https://github.com/nursedredd/ramonas-familjedaghem-v-2",
+    code: "https://github.com/NurseDredd/Ramonas-Familjedaghem-v.2",
   },
   {
     title: "Figma Webshop Prototype",
