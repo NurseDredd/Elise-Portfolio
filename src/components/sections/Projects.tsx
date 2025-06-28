@@ -19,7 +19,7 @@ const projects: Project[] = [
     description:
       "This fully responsive portfolio website is built with Next.js, TypeScript, and Tailwind CSS. I used the project as an opportunity to experiment with features like parallax effects and animations.",
     image: "/projects/portfolio.webp",
-    link: "https://elise-portfolio.vercel.app/",
+    link: "https://elise-portfolio-jet.vercel.app/",
     code: "https://github.com/nursedredd/elise-portfolio",
   },
   {
@@ -50,7 +50,7 @@ const projects: Project[] = [
     description:
       "School project - CashNinjas is a web application that allows users to manage their debit cards. It features three theme options and is built with Vite, React, Redux Toolkit, and CSS Modules.",
     image: "/projects/cashninjas.webp",
-    link: "https://nursedredd.github.io/E-Wallet/",
+    link: "https://e-wallet-blond.vercel.app/",
     code: "https://github.com/NurseDredd/E-Wallet",
   },
   {

@@ -4,18 +4,53 @@ import { MobileMenu } from "./MobileMenu";
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
+  const lastScrollYRef = useRef(0);
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    // Set initial scroll position
+    lastScrollYRef.current = window.scrollY;
+
     const handleScroll = () => {
       if (headerRef.current) {
-        const scrollY = window.scrollY;
-        const opacity = Math.max(0, 1 - scrollY / 300);
-        headerRef.current.style.opacity = opacity.toString();
+        const currentScrollY = window.scrollY;
+
+        // Check if user is actually scrolling (not just navigating back)
+        const scrollDelta = Math.abs(currentScrollY - lastScrollYRef.current);
+        if (scrollDelta > 5) {
+          // Threshold to detect actual scrolling
+          isScrollingRef.current = true;
+        }
+
+        // Only apply opacity if user is actively scrolling
+        if (isScrollingRef.current) {
+          const opacity = Math.max(0, 1 - currentScrollY / 300);
+          headerRef.current.style.opacity = opacity.toString();
+        }
+
+        lastScrollYRef.current = currentScrollY;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Add a small delay to reset scrolling state
+    const handleScrollWithDelay = () => {
+      handleScroll();
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 100);
+    };
+
+    window.addEventListener("scroll", handleScrollWithDelay);
+    return () => {
+      window.removeEventListener("scroll", handleScrollWithDelay);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
   }, []);
 
   return (
