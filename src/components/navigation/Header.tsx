@@ -9,8 +9,13 @@ export const Header: React.FC = () => {
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Set initial scroll position
+    // Set initial scroll position and opacity
     lastScrollYRef.current = window.scrollY;
+    if (headerRef.current) {
+      const initialOpacity =
+        window.scrollY === 0 ? 1 : Math.max(0, 1 - window.scrollY / 300);
+      headerRef.current.style.opacity = initialOpacity.toString();
+    }
 
     const handleScroll = () => {
       if (headerRef.current) {
@@ -23,12 +28,20 @@ export const Header: React.FC = () => {
           isScrollingRef.current = true;
         }
 
-        // Only apply opacity if user is actively scrolling
-        if (isScrollingRef.current) {
-          const opacity = Math.max(0, 1 - currentScrollY / 300);
-          headerRef.current.style.opacity = opacity.toString();
+        // Calculate opacity based on scroll position
+        let opacity;
+        if (currentScrollY === 0) {
+          // At the top of the page - show full opacity
+          opacity = 1;
+        } else if (isScrollingRef.current) {
+          // User is actively scrolling - apply fade effect
+          opacity = Math.max(0, 1 - currentScrollY / 300);
+        } else {
+          // User navigated back - maintain current opacity based on position
+          opacity = Math.max(0, 1 - currentScrollY / 300);
         }
 
+        headerRef.current.style.opacity = opacity.toString();
         lastScrollYRef.current = currentScrollY;
       }
     };
